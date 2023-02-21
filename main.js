@@ -10,8 +10,10 @@ if (edad >= 18) saludar(ingrseSuNombre);
 
 while (edad < 18) {
   alert("Vuelve cuando tengas 18");
-  prompt("ingrese su edad");
+edad = prompt("ingrese su edad");
+
 }
+
 /*function Producto (titulo, color, precio) {
   this.titulo = titulo;
   this.color = color;
@@ -23,16 +25,19 @@ console.log(producto1);
 console.log(producto2);
 */
 
-var productos = [
+const productos = [
   {nombre: 'Musculosa deportiva', precio: 2000},
   {nombre: 'Remera Overiceze', precio: 2500},
   {nombre: 'Remera slim', precio: 3000}
 ];
-
+/*
 productos.forEach((producto) => {
   console.log(producto.nombre.precio)
-})
-alert("Mire y elija algun producto de la consola")
+}) DESCOMENTAR UN SEGUNDO*/ 
+
+let productoElegido= prompt("Ingrese el producto que quiere adquirir");
+console.log(productos.find((producto) => producto.nombre===productoElegido));
+
 let precio = prompt("Ingrese el precio del producto");
 let cantidad = prompt("Elija la cantidad del producto");
 
