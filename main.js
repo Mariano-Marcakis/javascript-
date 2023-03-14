@@ -14,26 +14,18 @@ edad = prompt("ingrese su edad");
 
 }
 
-/*function Producto (titulo, color, precio) {
-  this.titulo = titulo;
-  this.color = color;
-  this.precio = precio; 
-}
-const producto1 = new Producto("Remera slim","blanco", 3000);
-const producto2 = new Producto("Musculosa","Negra", 4500);
-console.log(producto1);
-console.log(producto2);
-*/
 
-const productos = [
+
+var productos = [
   {nombre: 'Musculosa deportiva', precio: 2000},
   {nombre: 'Remera Overiceze', precio: 2500},
   {nombre: 'Remera slim', precio: 3000}
 ];
-/*
-productos.forEach((producto) => {
-  console.log(producto.nombre.precio)
-}) DESCOMENTAR UN SEGUNDO*/ 
+localStorage.setItem("productos", JSON.stringify(productos));
+const productoEnLS = JSON.parse(localStorage.getItem("productos"));
+console.log (productoEnLS);
+
+
 
 let productoElegido= prompt("Ingrese el producto que quiere adquirir");
 console.log(productos.find((producto) => producto.nombre===productoElegido));
@@ -47,7 +39,7 @@ alert("El precio a pagar en total con descuento es" + precio * cantidad * 0.85);
 
 
 
-// switch
+
 let diaDeLaSemana = Number(
   prompt(
     "Ingrese que dia de la semana con numeros va a retirar su pedido (ejemplo: 1=lunes) "
@@ -92,14 +84,17 @@ for (let i = 0; i < metodosPago.length; i++) {
 document.body.appendChild(selectMetodoPago);
 
 
-/*
 
-var productos = [
-  {nombre: 'Musculosa deportiva', precio: 2000},
-  {nombre: 'Remera Overiceze', precio: 2500},
-  {nombre: 'Remera slim', precio: 3000}
-];
+const username = document.getElementById('username')
+const password = document.getElementById('password')
+const button = document.getElementById('button')
 
-productos.forEach((producto) => {
-  console.log(producto.nombre)
-}) */
+button.addEventListener('click', (e) => {
+    e.preventDefault()
+    const data = {
+        username: username.value,
+        password: password.value
+    }
+
+    alert("iniciaste sesion!")
+})
